@@ -32,6 +32,12 @@ build/
 ### VS Code ###
 .vscode/
 
+### Python venv (if used locally) ###
+.venv/
+
+### Compiled artifacts ###
+**/*.class
+
 ### Logs ###
 *.log
 logs/
@@ -56,6 +62,14 @@ user_backup.sql
 ### One-off password reset scripts (keep private) ###
 update_bcrypt_password.sql
 update_correct_password.sql
+
+### Local-only utilities / drafts (do not commit) ###
+add-logout-button.ps1
+GenerateHash.java
+DEBUG_TIPS.md
+DEPLOYMENT_CHECKLIST.md
+STAGE3_IMPLEMENTATION.md
+STAGE4_CHECKIN_FEATURE.md
 
 ### Maven plugin / wrapper output ###
 dependency-reduced-pom.xml

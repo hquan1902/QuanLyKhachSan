@@ -1,0 +1,81 @@
+server:server:
+
+  port: 8080  port: 8080
+
+  servlet:  servlet:
+
+    context-path: /hotel_reservation_premium    context-path: /hotel_reservation_premium
+
+
+
+spring:spring:
+
+  datasource:  datasource:
+
+    url: ${DB_URL:jdbc:mysql://localhost:3306/hotel_reservation_premium?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Bangkok}    url: ${DB_URL:jdbc:mysql://localhost:3306/hotel_reservation_premium?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Bangkok}
+
+    username: ${DB_USERNAME:root}    username: ${DB_USERNAME:root}
+
+    password: ${DB_PASSWORD:}    password: ${DB_PASSWORD:}
+
+    driver-class-name: com.mysql.cj.jdbc.Driver    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+
+  jpa:  jpa:
+
+    hibernate:    hibernate:
+
+      ddl-auto: validate      ddl-auto: validate   
+
+    show-sql: true    show-sql: true
+
+    open-in-view: false    open-in-view: false
+
+    properties:    properties:
+
+      hibernate:      hibernate:
+
+        dialect: org.hibernate.dialect.MySQLDialect        dialect: org.hibernate.dialect.MySQLDialect
+
+        cache:        cache:
+
+          use_second_level_cache: false          use_second_level_cache: false
+
+          use_query_cache: false          use_query_cache: false
+
+        format_sql: true        format_sql: true
+
+    hibernate.naming:    hibernate.naming:
+
+      physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl      physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+      implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl      implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+
+
+
+  sql:  sql:
+
+    init:    init:
+
+      mode: never      mode: never
+
+
+
+  resources:  resources:
+
+    static-locations: classpath:/static/, file:./frontend/    static-locations: classpath:/static/, file:./frontend/
+
+
+
+# JWT Configuration# JWT Configuration
+
+jwt:jwt:
+
+  # NOTE: Do NOT hardcode secrets in a public repository.  # NOTE: Do NOT hardcode secrets in a public repository.
+
+  secret: ${JWT_SECRET:change-me}  secret: ${JWT_SECRET:change-me}
+
+  expiration: ${JWT_EXPIRATION_MS:86400000}  # default: 24 hours  expiration: ${JWT_EXPIRATION_MS:86400000}  # default: 24 hours
+
+
