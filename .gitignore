@@ -31,3 +31,31 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Logs ###
+*.log
+logs/
+
+### OS / misc ###
+.DS_Store
+Thumbs.db
+
+### Environment / secrets (do not commit) ###
+.env
+.env.*
+*.local
+application-local.yaml
+application-local.yml
+application-local.properties
+
+### Database dumps / backups (do not commit) ###
+**/*backup*.sql
+**/*_backup*.sql
+user_backup.sql
+
+### One-off password reset scripts (keep private) ###
+update_bcrypt_password.sql
+update_correct_password.sql
+
+### Maven plugin / wrapper output ###
+dependency-reduced-pom.xml
