@@ -36,25 +36,28 @@ Hệ thống quản lý đặt phòng khách sạn gồm **Backend Spring Boot (
 
 ## ⚙️ Cấu hình (Quan trọng)
 
-Hiện tại `src/main/resources/application.yaml` có chứa thông tin cấu hình DB và `jwt.secret`.
+Vì repo là **public**, `src/main/resources/application.yaml` được cấu hình theo kiểu **template** và KHÔNG hardcode secrets.
+Bạn cần cung cấp cấu hình thật bằng 1 trong 2 cách dưới.
 
 **Khuyến nghị cho môi trường thật:**
 
-1. Tạo file `src/main/resources/application-local.yaml` (file này đã được `.gitignore` để tránh push secrets)
-2. Chạy bằng profile local, hoặc override bằng biến môi trường.
+### Cách A (khuyến nghị): tạo file local (không commit)
 
-Ví dụ cấu hình local (gợi ý):
+1. Copy `src/main/resources/application-local.yaml.example` thành `src/main/resources/application-local.yaml`
+2. Điền `spring.datasource.password` và `jwt.secret`
+3. Chạy với profile `local`
 
-```yaml
-spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/hotel_reservation_premium
-    username: root
-    password: <YOUR_PASSWORD>
+### Cách B: dùng biến môi trường
 
-jwt:
-  secret: <YOUR_JWT_SECRET>
-```
+Bạn có thể set các biến môi trường sau:
+
+- `DB_URL`
+- `DB_USERNAME`
+- `DB_PASSWORD`
+- `JWT_SECRET`
+- `JWT_EXPIRATION_MS`
+
+> Lưu ý: Nếu bạn chạy mà không set `DB_PASSWORD` / `JWT_SECRET`, app có thể fail kết nối DB hoặc fail validate JWT.
 
 ## ▶️ Chạy Backend
 
@@ -62,6 +65,12 @@ jwt:
 
 ```powershell
 ./mvnw spring-boot:run
+```
+
+Chạy với profile local:
+
+```powershell
+./mvnw spring-boot:run -Dspring-boot.run.profiles=local
 ```
 
 ### Cách 2: Build jar
