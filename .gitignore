@@ -62,6 +62,7 @@ user_backup.sql
 ### One-off password reset scripts (keep private) ###
 update_bcrypt_password.sql
 update_correct_password.sql
+setup_default_password.sql
 
 ### Local-only utilities / drafts (do not commit) ###
 add-logout-button.ps1

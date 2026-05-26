@@ -27,7 +27,7 @@ Hệ thống quản lý đặt phòng khách sạn gồm **Backend Spring Boot (
 - `src/main/java/...`: mã nguồn backend
 - `src/main/resources/application.yaml`: cấu hình ứng dụng
 - `frontend/`: giao diện (static files)
-- `*.postman_collection.json`: Postman collections để test API
+- `pom.xml`: cấu hình Maven
 
 ## ✅ Yêu cầu
 
@@ -99,31 +99,11 @@ hoặc truy cập qua backend nếu có mapping.
 
 ## 🧪 Test API
 
-- Import các file Postman collections:
-  - `Hotel_Reservation_Full_Flow.postman_collection.json`
-  - `Hotel_Reservation_JWT_Auth.postman_collection.json`
+Bạn có thể dùng Postman/Insomnia tùy ý để test API. Repo không giữ collection để tránh lộ dữ liệu demo.
 
-## 🔐 Lưu ý về dữ liệu nhạy cảm
+## 📄 Ghi chú
 
-Trong repo có/đã từng có các file SQL kiểu “reset password / backup user”. Những file dạng:
-
-- `user_backup.sql`
-- `update_bcrypt_password.sql`
-- `update_correct_password.sql`
-
-**không nên push lên GitHub** (dễ lộ dữ liệu/ý đồ reset mật khẩu). Repo đã được tối ưu `.gitignore` để bỏ qua các file này.
-
-Nếu bạn đã lỡ commit/push thông tin nhạy cảm (DB password, JWT secret), cần:
-
-- Rotate (đổi) password DB/JWT secret
-- Và cân nhắc sửa lịch sử git (BFG / git filter-repo) nếu bắt buộc xóa khỏi lịch sử.
-
-## 📄 Tài liệu tham khảo trong repo
-
-- `DEPLOYMENT_CHECKLIST.md`
-- `INTEGRATION_GUIDE.md`
-- `EMPLOYEE_API_INTEGRATION.md`
-- `Danh_sach_API.md`
+- Các file tài liệu nội bộ/nháp đã được gỡ khỏi GitHub để repo gọn và chuyên nghiệp hơn.
 
 ---
 
