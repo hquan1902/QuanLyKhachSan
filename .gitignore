@@ -71,5 +71,12 @@ DEPLOYMENT_CHECKLIST.md
 STAGE3_IMPLEMENTATION.md
 STAGE4_CHECKIN_FEATURE.md
 
+### Docs/collections kept local only ###
+Danh_sach_API.md
+EMPLOYEE_API_INTEGRATION.md
+INTEGRATION_GUIDE.md
+Hotel_Reservation_Full_Flow.postman_collection.json
+Hotel_Reservation_JWT_Auth.postman_collection.json
+
 ### Maven plugin / wrapper output ###
 dependency-reduced-pom.xml
